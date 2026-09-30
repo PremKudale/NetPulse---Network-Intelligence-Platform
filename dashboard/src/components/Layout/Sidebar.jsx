@@ -17,11 +17,24 @@ function IconFlow(props) {
     </svg>
   );
 }
+function IconTopology(props) {
+  return (
+    <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <circle cx="12" cy="5" r="2.5" />
+      <circle cx="5" cy="19" r="2.5" />
+      <circle cx="19" cy="19" r="2.5" />
+      <line x1="12" y1="7.5" x2="5" y2="16.5" />
+      <line x1="12" y1="7.5" x2="19" y2="16.5" />
+      <line x1="7.5" y1="19" x2="16.5" y2="19" />
+    </svg>
+  );
+}
 
 const navItems = [
   { to: '/', icon: IconHome, label: 'Overview' },
   { to: '/dashboard', icon: IconBarChart, label: 'Dashboard' },
   { to: '/pipeline', icon: IconFlow, label: 'Pipeline Flow' },
+  { to: '/topology', icon: IconTopology, label: 'Topology Map' },
   { to: '/devices', icon: IconMonitor, label: 'Devices' },
   { to: '/traffic', icon: IconList, label: 'Traffic' },
   { to: '/protocols', icon: IconLayers, label: 'Protocols' },

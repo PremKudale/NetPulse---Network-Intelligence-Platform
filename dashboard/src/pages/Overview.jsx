@@ -6,6 +6,7 @@ import ProtocolPie from '../components/Charts/ProtocolPie';
 import TopDevices from '../components/Widgets/TopDevices';
 import AnomalyFeed from '../components/Widgets/AnomalyFeed';
 import TrafficFlowSankey from '../components/Charts/TrafficFlowSankey';
+import PacketConsole from '../components/Widgets/PacketConsole';
 import { IconWifi, IconMonitor, IconZap, IconAlertTriangle, IconTrendingUp, IconLayers, IconActivity, IconRadio } from '../components/Icons';
 import { useSocket, useSocketFeed } from '../hooks/useSocket';
 import { getSummary, getBandwidth, getProtocols, getTopDevices, getAnomalies, getFlows } from '../api/http';
@@ -140,6 +141,9 @@ export default function Overview() {
             <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>{displayAnomalies.length} active</span>
           </div>
           <AnomalyFeed anomalies={displayAnomalies} maxItems={5} />
+        </div>
+        <div className="card span-4" style={{ padding: 0, overflow: 'hidden' }}>
+          <PacketConsole maxLines={35} speed="normal" />
         </div>
       </div>
     </motion.div>
