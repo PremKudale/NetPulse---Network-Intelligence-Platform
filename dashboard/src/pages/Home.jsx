@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { IconActivity, IconLayers, IconDatabase, IconRadio, IconMonitor, IconShield, IconZap, IconTrendingUp, IconGlobe } from '../components/Icons';
+import { IconDatabase, IconRadio, IconZap, IconTrendingUp } from '../components/Icons';
+import IntelligenceFlowGraph from '../components/Flow/IntelligenceFlowGraph';
 
 const features = [
   {
@@ -43,9 +44,6 @@ const techStack = [
   { layer: 'Dashboard', tech: 'React + Vite', detail: 'Recharts · Framer Motion · WebSocket live updates' },
 ];
 
-function IconGlobeLocal(props) {
-  return <svg className="icon" viewBox="0 0 24 24" {...props}><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>;
-}
 
 export default function Home() {
   const navigate = useNavigate();
@@ -166,6 +164,33 @@ export default function Home() {
             INSPECT PIPELINE →
           </button>
         </motion.div>
+      </section>
+
+      {/* ── Interactive Neural Intelligence Architecture ── */}
+      <section style={{ padding: '0 32px 36px', position: 'relative' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 14, flexWrap: 'wrap', gap: 10 }}>
+          <div>
+            <div style={{
+              fontSize: '0.6rem', fontWeight: 800, textTransform: 'uppercase',
+              letterSpacing: '0.14em', color: 'var(--accent)', marginBottom: 4,
+              fontFamily: 'var(--font-mono)',
+            }}>
+              NEURAL TELEMETRY ARCHITECTURE
+            </div>
+            <h2 style={{ fontSize: '1.4rem', fontWeight: 900, letterSpacing: '-0.02em', margin: 0 }}>
+              Live Synaptic Flow: Signals → Intelligence → Context → Outcomes
+            </h2>
+          </div>
+          <button
+            className="btn btn-ghost"
+            style={{ fontSize: '0.74rem', padding: '6px 14px' }}
+            onClick={() => navigate('/pipeline')}
+          >
+            OPEN FULLSCREEN PIPELINE →
+          </button>
+        </div>
+
+        <IntelligenceFlowGraph isCompact={false} />
       </section>
 
       {/* ── How It Works (Pipeline Steps) ────────────────── */}

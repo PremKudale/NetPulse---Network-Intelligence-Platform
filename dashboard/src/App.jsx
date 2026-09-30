@@ -7,6 +7,7 @@ import Traffic from './pages/Traffic';
 import Protocols from './pages/Protocols';
 import Anomalies from './pages/Anomalies';
 import Historical from './pages/Historical';
+import PipelineFlow from './pages/PipelineFlow';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Overview />} />
+          <Route path="/pipeline" element={<PipelineFlow />} />
           <Route path="/devices" element={<Devices />} />
           <Route path="/traffic" element={<Traffic />} />
           <Route path="/protocols" element={<Protocols />} />

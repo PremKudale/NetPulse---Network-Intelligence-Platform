@@ -35,6 +35,8 @@ venv.bak/
 *.sqlite3
 *.db
 *.db-journal
+*.db-shm
+*.db-wal
 
 # IDEs & System files
 .vscode/

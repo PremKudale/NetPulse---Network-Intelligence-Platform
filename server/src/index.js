@@ -27,8 +27,9 @@ const CORS_ORIGIN = process.env.CORS_ORIGIN || 'http://localhost:5173';
 // Socket.IO setup
 const io = new Server(server, {
   cors: {
-    origin: CORS_ORIGIN,
-    methods: ['GET', 'POST', 'PUT', 'DELETE']
+    origin: (origin, callback) => callback(null, true),
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
   },
   pingInterval: 10000,
   pingTimeout: 5000
@@ -39,7 +40,7 @@ app.set('io', io);
 
 // Middleware
 app.use(helmet({ contentSecurityPolicy: false }));
-app.use(cors({ origin: CORS_ORIGIN }));
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.json({ limit: '10mb' }));
 
 // Request logging
