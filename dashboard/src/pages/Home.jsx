@@ -31,10 +31,10 @@ const features = [
 ];
 
 const stats = [
-  { label: 'Protocols Tracked', value: '8+', sub: 'TCP · UDP · DNS · ICMP · ARP · HTTP · HTTPS · SSH' },
-  { label: 'Detection Algorithms', value: '4', sub: 'Bandwidth spikes · Port scans · Floods · Rare protocols' },
-  { label: 'Dashboard Pages', value: '6', sub: 'Overview · Devices · Traffic · Protocols · Anomalies · Historical' },
-  { label: 'Setup Time', value: '0 min', sub: 'SQLite auto-initializes · No database server needed' },
+  { label: 'Protocols Tracked', value: '12+', sub: 'HTTPS · TCP · HTTP · DNS · UDP · SSH · ICMP · ARP · DHCP · NTP' },
+  { label: 'Threat Intel & DPI', value: 'MITRE', sub: 'C2 beaconing · Port scans · Brute force · DNS exfiltration' },
+  { label: 'Dashboard Views', value: '11', sub: 'Overview · Pipeline · Topology · GeoIP · Threat Intel · Devices · Traffic...' },
+  { label: 'Capture & Replay', value: 'Real PCAP', sub: 'Wireshark captures · CAIDA diurnal curve · Micro-burst spikes' },
 ];
 
 const techStack = [

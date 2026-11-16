@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useSocketStatus } from '../../hooks/useSocket';
-import { IconBarChart, IconMonitor, IconList, IconLayers, IconAlertTriangle, IconClock } from '../Icons';
+import { IconBarChart, IconMonitor, IconList, IconLayers, IconAlertTriangle, IconClock, IconGlobe, IconShield } from '../Icons';
 
 function IconHome(props) {
   return <svg className="icon" viewBox="0 0 24 24" {...props}><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>;
@@ -35,6 +35,8 @@ const navItems = [
   { to: '/dashboard', icon: IconBarChart, label: 'Dashboard' },
   { to: '/pipeline', icon: IconFlow, label: 'Pipeline Flow' },
   { to: '/topology', icon: IconTopology, label: 'Topology Map' },
+  { to: '/geomap', icon: IconGlobe, label: 'GeoIP Map' },
+  { to: '/threat-intel', icon: IconShield, label: 'Threat Intel' },
   { to: '/devices', icon: IconMonitor, label: 'Devices' },
   { to: '/traffic', icon: IconList, label: 'Traffic' },
   { to: '/protocols', icon: IconLayers, label: 'Protocols' },

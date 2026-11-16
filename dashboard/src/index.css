@@ -474,7 +474,7 @@ h3 { font-size: 1.05rem; }
 .btn-sm { padding: 3px 9px; font-size: 0.65rem; }
 
 /* ── Anomaly Feed ───────────────────────────────────────── */
-.anomaly-feed { display: flex; flex-direction: column; gap: 6px; max-height: 400px; overflow-y: auto; }
+.anomaly-feed { display: flex; flex-direction: column; gap: 6px; max-height: 600px; overflow-y: auto; }
 
 .anomaly-item {
   display: flex; gap: 10px; padding: 10px 12px;
@@ -483,18 +483,102 @@ h3 { font-size: 1.05rem; }
   transition: all var(--duration-fast) var(--ease-out);
 }
 .anomaly-item:hover { border-color: var(--border-hover); background: var(--bg-card-hover); }
-.anomaly-item.critical { border-left: 2px solid var(--red); }
-.anomaly-item.warning { border-left: 2px solid var(--accent); }
-.anomaly-item.info { border-left: 2px solid var(--blue); }
+.anomaly-item.critical { border-left: 3px solid var(--red); }
+.anomaly-item.warning { border-left: 3px solid var(--accent); }
+.anomaly-item.info { border-left: 3px solid var(--blue); }
 
-.anomaly-icon { flex-shrink: 0; margin-top: 1px; }
+.anomaly-type-icon {
+  flex-shrink: 0;
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 8px;
+  margin-top: 1px;
+}
 
 .anomaly-content { flex: 1; min-width: 0; }
-.anomaly-title { font-size: 0.78rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1px; }
+
+.anomaly-header-row {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 2px;
+}
+.anomaly-title { font-size: 0.78rem; font-weight: 600; color: var(--text-primary); }
+.anomaly-type-badge {
+  font-size: 0.58rem; font-weight: 700; font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+  padding: 1px 6px;
+  border: 1px solid;
+  border-radius: 3px;
+  white-space: nowrap;
+  line-height: 1.6;
+}
+
 .anomaly-description { font-size: 0.7rem; color: var(--text-secondary); line-height: 1.4; }
 .anomaly-meta {
-  display: flex; gap: 10px; margin-top: 4px;
+  display: flex; gap: 10px; align-items: center; margin-top: 4px;
   font-size: 0.65rem; color: var(--text-muted); font-family: var(--font-mono);
+}
+.anomaly-proto-tag {
+  padding: 0 5px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* ── Anomaly Type Breakdown Grid ───────────────────────── */
+.anomaly-type-grid {
+  display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 14px;
+}
+.anomaly-type-chip {
+  display: flex; align-items: center; gap: 6px;
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  font-family: var(--font-sans);
+}
+.anomaly-type-chip:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+}
+.anomaly-type-chip.active {
+  border-color: var(--accent);
+  background: rgba(0, 255, 136, 0.06);
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.1);
+}
+.anomaly-type-chip-count {
+  font-size: 1rem; font-weight: 700; color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+.anomaly-type-chip-label {
+  font-size: 0.68rem; font-weight: 600; color: var(--text-secondary);
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+
+/* ── Anomaly Type Select Dropdown ──────────────────────── */
+.anomaly-type-select {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  padding: 4px 8px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+.anomaly-type-select:hover,
+.anomaly-type-select:focus {
+  border-color: var(--accent);
+}
+.anomaly-type-select option {
+  background: var(--bg-panel);
+  color: var(--text-primary);
 }
 
 /* ── Device List ────────────────────────────────────────── */
